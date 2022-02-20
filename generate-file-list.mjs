@@ -1,6 +1,6 @@
 import fs from 'fs'
 
-const BATTLES_DIR = './battles'
+const BATTLES_DIR = './public/battles'
 const TARGET_DIR = './src/battles'
 
 const files = fs.readdirSync(BATTLES_DIR)
@@ -24,9 +24,9 @@ for (const file of files) {
   }
 }
 
-fs.rmSync('./src/battles', { recursive: true })
+fs.rmSync(TARGET_DIR, { recursive: true })
 
-fs.mkdirSync('./src/battles', { recursive: true })
+fs.mkdirSync(TARGET_DIR, { recursive: true })
 
 for (const date of Object.keys(result)) {
   fs.writeFileSync(`${TARGET_DIR}/${date}.json`, JSON.stringify(result[date]), { flag: 'w+' })
