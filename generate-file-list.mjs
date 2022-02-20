@@ -24,7 +24,9 @@ for (const file of files) {
   }
 }
 
-fs.rmSync(TARGET_DIR, { recursive: true })
+if (fs.existsSync(TARGET_DIR)) {
+  fs.rmSync(TARGET_DIR, { recursive: true })
+}
 
 fs.mkdirSync(TARGET_DIR, { recursive: true })
 
