@@ -10,10 +10,10 @@ export default function Index() {
           <li key={date} className="rounded-lg border">
             <Link
               to={`/${date}`}
-              className="inline-flex h-full w-full items-center"
+              className="group inline-flex h-full w-full items-center"
             >
               <FolderIcon className="w-20 text-emerald-700" />
-              <h3>{date}</h3>
+              <h3 className="group-hover:underline">{date}</h3>
             </Link>
           </li>
         ))}

@@ -27,7 +27,7 @@ export default function Battles() {
         <ul className="list-disc">
           {battles.map(battle => (
             <li className="mb-1 text-base" key={battle.file}>
-              <Link to={`/${date}/${battle.file}`}>
+              <Link to={`/${date}/${battle.file}`} className="hover:underline">
                 <span className="font-mono">[{battle.format}]</span>
                 <span className="font-medium">
                   {' '}
