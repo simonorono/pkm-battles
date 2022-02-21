@@ -31,13 +31,13 @@ if (fs.existsSync(TARGET_DIR)) {
 fs.mkdirSync(TARGET_DIR, { recursive: true })
 
 for (const date of Object.keys(result)) {
-  fs.writeFileSync(`${TARGET_DIR}/${date}.json`, JSON.stringify(result[date]), { flag: 'w+' })
+  fs.writeFileSync(`${TARGET_DIR}/${date}.json`, JSON.stringify(result[date]), {
+    flag: 'w+',
+  })
 }
 
 fs.writeFileSync(
   `${TARGET_DIR}/index.json`,
-  JSON.stringify(
-    Object.keys(result).sort((a, b) => a > b ? -1 : 1)
-  ),
+  JSON.stringify(Object.keys(result).sort((a, b) => (a > b ? -1 : 1))),
   { flag: 'w+' }
 )
