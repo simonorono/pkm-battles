@@ -30,7 +30,7 @@ export default function Battles() {
 
       {isLoading && <p>Loading</p>}
       {isLoading || (
-        <ul className="list-disc">
+        <ul className="list-disc px-4">
           {battles.map(battle => (
             <li className="mb-1 text-base" key={battle.file}>
               <Link to={`/${date}/${battle.file}`} className="hover:underline">
