@@ -12,7 +12,15 @@ function App() {
             <h1 className="font-serif text-3xl hover:underline">
               <Link to="/">Pokémon Battle History</Link>
             </h1>
-            <h2>Simón Oroño</h2>
+            <h2>
+              <a
+                href="https://simonorono.com"
+                className="underline sm:no-underline sm:hover:underline"
+                target="_blank"
+              >
+                Simón Oroño
+              </a>
+            </h2>
           </div>
         </header>
         <main className="grow">
