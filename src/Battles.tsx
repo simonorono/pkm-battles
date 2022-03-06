@@ -22,6 +22,12 @@ export default function Battles() {
     <div className="mx-auto max-w-7xl">
       <h2 className="mb-5 text-xl">Battles from {date}</h2>
 
+      <div className="mx-auto mb-8 w-full max-w-7xl">
+        <Link to="/" className="underline sm:no-underline sm:hover:underline">
+          « Back to index
+        </Link>
+      </div>
+
       {isLoading && <p>Loading</p>}
       {isLoading || (
         <ul className="list-disc">

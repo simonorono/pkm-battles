@@ -22,7 +22,12 @@ export default function Battle() {
   return (
     <div className="w-full">
       <div className="mx-auto w-full max-w-7xl">
-        <Link to={`/${date}`}>« Back to {date}</Link>
+        <Link
+          to={`/${date}`}
+          className="underline sm:no-underline sm:hover:underline"
+        >
+          « Back to {date}
+        </Link>
       </div>
 
       <iframe
