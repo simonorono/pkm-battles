@@ -1,22 +1,14 @@
-import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-
-const battleFiles = import.meta.glob('./battles/*.json')
+import history from './battles/history.json'
 
 export default function Battles() {
-  const [isLoading, setIfLoading] = useState(true)
-  const [battles, setBattles] = useState([] as Battle[])
-
   const { date } = useParams() as { date: string }
 
-  const battleFile = battleFiles[`./battles/${date}.json`] || null
+  // This variable exists only for the purpose of provide typing to the values
+  // in the JSON file.
+  const battleHistory: { [key: string]: Battle[] } = history
 
-  if (battleFile) {
-    battleFile().then(data => {
-      setIfLoading(false)
-      setBattles(data.default)
-    })
-  }
+  const battles = battleHistory[date] || []
 
   return (
     <div className="mx-auto max-w-7xl">
@@ -28,22 +20,19 @@ export default function Battles() {
         </Link>
       </div>
 
-      {isLoading && <p>Loading</p>}
-      {isLoading || (
-        <ul className="list-disc px-4">
-          {battles.map(battle => (
-            <li className="mb-1 text-base" key={battle.file}>
-              <Link to={`/${date}/${battle.file}`} className="hover:underline">
-                <span className="font-mono">[{battle.format}]</span>
-                <span className="font-medium">
-                  {' '}
-                  {battle.player1} vs. {battle.player2}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
+      <ul className="list-disc px-4">
+        {battles.map(battle => (
+          <li className="mb-1 text-base" key={battle.file}>
+            <Link to={`/${date}/${battle.file}`} className="hover:underline">
+              <span className="font-mono">[{battle.format}]</span>
+              <span className="font-medium">
+                {' '}
+                {battle.player1} vs. {battle.player2}
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
