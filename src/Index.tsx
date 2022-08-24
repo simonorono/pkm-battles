@@ -1,4 +1,4 @@
-import { FolderIcon } from '@heroicons/react/solid'
+import { FolderOpenIcon } from '@heroicons/react/24/solid'
 import { Link } from 'react-router-dom'
 import history from './battles/history.json'
 
@@ -14,9 +14,9 @@ export default function Index() {
           <li key={date} className="rounded-lg border">
             <Link
               to={`/${date}`}
-              className="group inline-flex h-full w-full items-center"
+              className="group inline-flex h-full w-full items-center space-x-2"
             >
-              <FolderIcon className="w-20 text-emerald-700" />
+              <FolderOpenIcon className="w-20 text-emerald-700" />
               <h3 className="group-hover:underline">{date}</h3>
             </Link>
           </li>
