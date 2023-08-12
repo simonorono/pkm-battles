@@ -38,7 +38,7 @@ export default function TableBody(props: Props) {
           <TD>
             <Link
               className="text-green-700 hover:underline"
-              to={`/${battle.date}/${battle.file}`}
+              to={`/${battle.file}`}
             >
               View
             </Link>

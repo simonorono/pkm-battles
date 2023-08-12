@@ -25,7 +25,7 @@ function App() {
         <main className="grow">
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/:date/:file" element={<Battle />} />
+            <Route path="/:file" element={<Battle />} />
           </Routes>
         </main>
       </div>
