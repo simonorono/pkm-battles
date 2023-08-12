@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 
 export default function Battle() {
   const iframe = useRef(null as HTMLIFrameElement | null)
-  const { date, file } = useParams() as { date: string; file: string }
+  const { file } = useParams() as { date: string; file: string }
 
   // Avoids having nested scroll bars by setting the height of the iframe to
   // the minimum required
