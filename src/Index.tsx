@@ -1,23 +1,10 @@
-import { FolderOpenIcon } from '@heroicons/react/24/solid'
-import { Link } from 'react-router-dom'
-import { days } from './data'
+import BattleTable from './components/BattleTable'
 
 export default function Index() {
   return (
     <div className="mx-auto max-w-7xl">
-      <ul className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {days().map(date => (
-          <li key={date} className="rounded-lg border">
-            <Link
-              to={`/${date}`}
-              className="group inline-flex h-full w-full items-center space-x-2"
-            >
-              <FolderOpenIcon className="w-20 text-emerald-700" />
-              <h3 className="group-hover:underline">{date}</h3>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <BattleTable />
+      <div className="h-32" />
     </div>
   )
 }
