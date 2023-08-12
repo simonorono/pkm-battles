@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Battle from './Battle'
-import Battles from './Battles'
 import Index from './Index'
 
 function App() {
@@ -26,7 +25,6 @@ function App() {
         <main className="grow">
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/:date" element={<Battles />} />
             <Route path="/:date/:file" element={<Battle />} />
           </Routes>
         </main>
