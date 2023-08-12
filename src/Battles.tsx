@@ -1,14 +1,8 @@
 import { Link, useParams } from 'react-router-dom'
-import history from './battles/history.json'
+import { battlesForDay } from './data'
 
 export default function Battles() {
   const { date } = useParams() as { date: string }
-
-  // This variable exists only for the purpose of provide typing to the values
-  // in the JSON file.
-  const battleHistory: { [key: string]: Battle[] } = history
-
-  const battles = battleHistory[date] || []
 
   return (
     <div className="mx-auto max-w-7xl">
@@ -21,7 +15,7 @@ export default function Battles() {
       </div>
 
       <ul className="list-disc px-4">
-        {battles.map(battle => (
+        {battlesForDay(date).map(battle => (
           <li className="mb-1 text-base" key={battle.file}>
             <Link to={`/${date}/${battle.file}`} className="hover:underline">
               <span className="font-mono">[{battle.format}]</span>

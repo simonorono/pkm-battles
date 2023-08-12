@@ -1,16 +1,12 @@
 import { FolderOpenIcon } from '@heroicons/react/24/solid'
 import { Link } from 'react-router-dom'
-import history from './battles/history.json'
+import { days } from './data'
 
 export default function Index() {
-  const dates = Object.keys(history).sort((a: string, b: string) =>
-    a > b ? -1 : 1
-  )
-
   return (
     <div className="mx-auto max-w-7xl">
       <ul className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {dates.map(date => (
+        {days().map(date => (
           <li key={date} className="rounded-lg border">
             <Link
               to={`/${date}`}
