@@ -1,8 +1,23 @@
+import { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Battle from './Battle'
 import Index from './Index'
 
 function App() {
+  // Scroll to top on resize to potentially show warning
+  useEffect(() => {
+    function onResize() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      })
+    }
+
+    window.addEventListener('resize', onResize)
+
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
   return (
     <Router>
       <div className="flex min-h-screen flex-col px-2">
