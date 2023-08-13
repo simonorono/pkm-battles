@@ -11,15 +11,6 @@ function App() {
             <h1 className="font-serif text-3xl hover:underline">
               <Link to="/">Pokémon Battle History</Link>
             </h1>
-            <h2>
-              <a
-                href="https://simonorono.com"
-                className="underline sm:no-underline sm:hover:underline"
-                target="_blank"
-              >
-                Simón Oroño
-              </a>
-            </h2>
           </div>
         </header>
         <main className="grow">
@@ -28,6 +19,21 @@ function App() {
             <Route path="/:file" element={<Battle />} />
           </Routes>
         </main>
+
+        <footer>
+          <p className="py-4 text-center">
+            ©
+            <a
+              href="https://simonorono.com"
+              className="underline sm:no-underline sm:hover:underline"
+              target="_blank"
+            >
+              Simón Oroño
+            </a>
+          </p>
+
+          <div className="h-32" />
+        </footer>
       </div>
     </Router>
   )
