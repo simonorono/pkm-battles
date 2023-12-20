@@ -1,10 +1,10 @@
-export default {
+module.exports = {
   arrowParens: 'avoid',
   bracketSameLine: false,
   bracketSpacing: true,
   endOfLine: 'lf',
   jsxSingleQuote: false,
-  plugins: [import('prettier-plugin-tailwindcss')],
+  plugins: ['prettier-plugin-tailwindcss'],
   printWidth: 80,
   proseWrap: 'always',
   semi: false,
