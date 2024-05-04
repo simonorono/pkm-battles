@@ -26,7 +26,7 @@ export default function BattleTable() {
                   <tr>
                     <td colSpan={5}>
                       <button
-                        className="whitespace-nowrap px-3 py-4 text-center text-sm font-semibold w-full"
+                        className="w-full whitespace-nowrap px-3 py-4 text-center text-sm font-semibold"
                         onClick={() => setPage(page + 1)}
                       >
                         Load more
